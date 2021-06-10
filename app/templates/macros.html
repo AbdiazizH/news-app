@@ -1,0 +1,35 @@
+
+{% macro displayNews(context) %}
+<div class="container">
+{% for des,new, i in context %}
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{i}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <p> {{new}} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <a href="/source/{{display.id}}"><p> Go to Articles</p></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    {% endfor %}
+    
+</div>
+{% endmacro %}

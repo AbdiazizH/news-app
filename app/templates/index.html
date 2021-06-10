@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+
+{% import 'macros.html' as macro %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the best News Review website </title>
+        {% endif %}
+
+       
+
+       <!-- Styles block -->
+
+       {% block styles%}
+       {{ super() }}
+       <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        {% endblock %}
+      <!-- Content block -->
+    </head>
+    <body>
+        <body>
+        
+            {% block content %}
+     
+  <div class="container">
+    <h1 class="">NEWS SOURCES</h1>
+      <hr>
+      
+        <div class="container">
+            {% for des,new, i, z , t in context %}
+            <img  src="{{ i}}"  alt="" width="50%" height="30%"  >
+            
+            <h1 >{{new}}</h1>
+            
+            <h3><a href="{{z}}">{{des}}</a></h3>
+            <h4>{{t}}</h4>
+          
+
+            <br>
+            <br><br>
+            <br>
+            <br>
+            {% endfor %}
+        </div>
+        
+  {% endblock %}
+        
+             
+     </body>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html'%}
+
+
+<!-- Navbar block  --> 
+{% block navbar %}
+    {% include 'navbar.html' %}
+    {% block content %}
+    <div class="container">
+      <h1 class="hef">NEWS SOURCES</h1>
+        <hr>
+        
+          <div class="container">
+              {% for des,new, i in context %}
+              <img  src="{{ i}}"  alt="">
+              
+              <h1 class="hef">{{new}}</h1>
+              {% endfor %}
+          </div>
+          
+    {% endblock %}
+          
+{% endblock %}
